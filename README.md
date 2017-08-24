@@ -33,3 +33,6 @@ To access help use the following command:
 ```{sh}
 python3 ahcg_pipeline.py -h
 ```
+
+#About Me - Khushbu 
+I am a Bioinformatics Master's student, in my third semester. My hobbies are reading and painting.
