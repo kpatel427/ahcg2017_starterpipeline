@@ -34,5 +34,5 @@ To access help use the following command:
 python3 ahcg_pipeline.py -h
 ```
 
-#About Me - Khushbu 
+# About Me - Khushbu 
 I am a Bioinformatics Master's student, in my third semester. My hobbies are reading and painting.
