@@ -35,4 +35,5 @@ python3 ahcg_pipeline.py -h
 ```
 
 # Installation
-GATK
+GATK version 3.4
+
