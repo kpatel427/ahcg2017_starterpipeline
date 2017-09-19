@@ -1,3 +1,7 @@
+# Applied Human Computational Genomics 2017
+Author: Khushbu Patel
+About: Second year Bioinformatics Master's student at Georgia Institute of Technology
+
 # ahcg_pipeline
 Variant calling pipeline for genomic data analysis
 
