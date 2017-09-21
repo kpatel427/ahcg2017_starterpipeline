@@ -42,3 +42,5 @@ python3 ahcg_pipeline.py -h
 # Installation
 GATK version 3.4
 
+# Virtual Box Setup
+[Click here for instructions to setup](https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html)
