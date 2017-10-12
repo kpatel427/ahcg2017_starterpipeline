@@ -54,9 +54,20 @@ Variant calling pipeline for genomic data analysis
 4. [Picard tools - version 2.6.0](https://github.com/broadinstitute/picard/releases/download/2.6.0/picard.jar)
 5. [GATK - version 3.4](https://software.broadinstitute.org/gatk/download/)
 
+#Note: Version 1.8 of Java is required to run Picard
+
 ## Reference genome
 
 Reference genomes can be downloaded from [Illumina iGenomes](http://support.illumina.com/sequencing/sequencing_software/igenome.html)
+
+### Create FASTA index file
+```
+samtools faidx reference.fa
+```
+### Create FASTA dictionary file
+```
+java -jar picard.jar CreateSequenceDictionary R=reference O=dictionary
+```
 
 ## Test data
 
@@ -86,10 +97,11 @@ GATK version 3.4
 [Click here for instructions to setup](https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html)
 
 ## Command to run pipeline
-
+```
 python ahcg_pipeline.py -i /path/to/FASTQ1 /path/to/FASTQ2 -o /path/to/output -p /path/to/picard.jar
 -g /path/to/GenomeAnalysisTK.jar -b /path/to/bowtie2 -w /path/to/genome.bt2 -r /path/to/genome.fa
 -d /path/to/genome.vcf -t /path/to/trimmomatic-0.36.jar -a /path/to/adapters.fa -o /path/to/output
+```
 
 ## Extract regions of interest from BAM file
 ```
@@ -97,7 +109,9 @@ samtools view input.bam "Chr10:18000-45500" > output.bam
 ```
 
 ## Determine sequencing coverage of genome
+```
 bedtools genomecov -d -ibam input.bam -g genome.bed > output.bed
+```
 
 ## Obtain exon coordinates using UCSC genome browser
 [Click here for the steps to Download the exon coordinates]
