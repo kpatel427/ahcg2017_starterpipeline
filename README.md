@@ -54,7 +54,7 @@ Variant calling pipeline for genomic data analysis
 4. [Picard tools - version 2.6.0](https://github.com/broadinstitute/picard/releases/download/2.6.0/picard.jar)
 5. [GATK - version 3.4](https://software.broadinstitute.org/gatk/download/)
 
-#Note: Version 1.8 of Java is required to run Picard
+#Note: Java v.1.8 is required to run Picard
 
 ## Reference genome
 
