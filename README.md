@@ -60,11 +60,11 @@ Aim: To detect somatic mutations in the pool of circulating cell free DNA by var
 
 Reference genomes can be downloaded from [Illumina iGenomes](http://support.illumina.com/sequencing/sequencing_software/igenome.html)
 
-### Create FASTA index file
+#### Create FASTA index file
 ```
 samtools faidx reference.fa
 ```
-### Create FASTA dictionary file
+#### Create FASTA dictionary file
 ```
 java -jar picard.jar CreateSequenceDictionary R=reference O=dictionary
 ```
