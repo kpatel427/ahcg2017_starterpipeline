@@ -117,3 +117,4 @@ bedtools genomecov -d -ibam input.bam -g genome.bed > output.bed
 [Click here for the steps to Download the exon coordinates](https://github.com/kpatel427/ahcg2017_starterpipeline/blob/master/UCSC.pdf)
 
 ## Filter variants by quality, depth of coverage, & type of mutation
+[iltering out variants to find interesting / relevant variants" ](http://snpeff.sourceforge.net/SnpSift.html)
