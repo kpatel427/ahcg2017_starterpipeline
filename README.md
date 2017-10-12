@@ -11,11 +11,9 @@ Liquid Biopsies are non invasive tests performed to look for circulating cell fr
 * GRAIL
 * Qiagen
 * Biocept
-* RainDance Technologies
-* Genomic Health
 
 ## Alterations expected to be detected in Liquid Biopsy
-* Somatic mutations LOH events
+* Somatic mutations-LOH events
 * Somatic copy number alterations (CNAs) in tumor-normal exome data
 * Epigenetic modifications 
 
@@ -34,7 +32,7 @@ Liquid Biopsies are non invasive tests performed to look for circulating cell fr
 Sequencing coverage describes the average number of reads that align to, or "cover," known reference bases. The next-generation sequencing (NGS) coverage level often determines whether variant discovery can be made with a certain degree of confidence at particular base positions.
 Higher number of base coverage indicate that each base is covered by a greater number of aligned sequence reads, so base calls can be made with a higher degree of confidence.
 
-Liquid biopsies require a much higher level of coverage than solid biopsies
+Liquid biopsies require a much higher level of coverage than solid tumor biopsies
 We need orders of magnitude higher than standard 900-1100X coverage
 
 We need:-
@@ -45,6 +43,8 @@ To calculate coverage needed to accurately detect somatic mutations
 
 # Applied Human Computational Genomics Pipeline
 Variant calling pipeline for genomic data analysis
+
+Aim: To detect somatic mutations in the pool of circulating cell free DNA by variant calling.
 
 ## Requirements
 
@@ -114,6 +114,6 @@ bedtools genomecov -d -ibam input.bam -g genome.bed > output.bed
 ```
 
 ## Obtain exon coordinates using UCSC genome browser
-[Click here for the steps to Download the exon coordinates]
+Click [here] for the steps to Download the exon coordinates()
 
 ## Filter variants by quality, depth of coverage, & type of mutation
