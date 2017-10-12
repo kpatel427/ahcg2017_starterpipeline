@@ -92,7 +92,9 @@ python ahcg_pipeline.py -i /path/to/FASTQ1 /path/to/FASTQ2 -o /path/to/output -p
 -d /path/to/genome.vcf -t /path/to/trimmomatic-0.36.jar -a /path/to/adapters.fa -o /path/to/output
 
 ## Extract regions of interest from BAM file
+```
 samtools view input.bam "Chr10:18000-45500" > output.bam
+```
 
 ## Determine sequencing coverage of genome
 bedtools genomecov -d -ibam input.bam -g genome.bed > output.bed
