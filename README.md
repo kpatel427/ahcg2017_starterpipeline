@@ -114,6 +114,6 @@ bedtools genomecov -d -ibam input.bam -g genome.bed > output.bed
 ```
 
 ## Obtain exon coordinates using UCSC genome browser
-[Click here for the steps to Download the exon coordinates](../blob/master/UCSC.pdf)
+[Click here for the steps to Download the exon coordinates](https://github.com/kpatel427/ahcg2017_starterpipeline/blob/master/UCSC.pdf)
 
 ## Filter variants by quality, depth of coverage, & type of mutation
