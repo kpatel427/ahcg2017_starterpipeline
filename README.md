@@ -85,19 +85,19 @@ GATK version 3.4
 ## Virtual Box Setup
 [Click here for instructions to setup](https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html)
 
-# Command to run pipeline
+## Command to run pipeline
 
 python ahcg_pipeline.py -i /path/to/FASTQ1 /path/to/FASTQ2 -o /path/to/output -p /path/to/picard.jar
 -g /path/to/GenomeAnalysisTK.jar -b /path/to/bowtie2 -w /path/to/genome.bt2 -r /path/to/genome.fa
 -d /path/to/genome.vcf -t /path/to/trimmomatic-0.36.jar -a /path/to/adapters.fa -o /path/to/output
 
-# Extract regions of interest from BAM file
+## Extract regions of interest from BAM file
 samtools view input.bam "Chr10:18000-45500" > output.bam
 
-# Determine sequencing coverage of genome
+## Determine sequencing coverage of genome
 bedtools genomecov -d -ibam input.bam -g genome.bed > output.bed
 
-# Obtain exon coordinates using UCSC genome browser
+## Obtain exon coordinates using UCSC genome browser
 [Click here for the steps to Download the exon coordinates]
 
-# Filter variants by quality, depth of coverage, & type of mutation
+## Filter variants by quality, depth of coverage, & type of mutation
