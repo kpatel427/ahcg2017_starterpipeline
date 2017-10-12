@@ -3,7 +3,47 @@ Author: Khushbu Patel
 
 About: Second year Bioinformatics Master's student at Georgia Institute of Technology
 
-# ahcg_pipeline
+# Background - Liquid Biopsy
+## What is Liquid Biopsy?
+Liquid Biopsies are non invasive tests performed to look for circulating cell free DNA from tumor cells in blood. A liquid biopsy has a potential to detect cancer at an early stage. 
+
+## Liquid Biopsy Companies
+* GRAIL
+* Qiagen
+* Biocept
+* RainDance Technologies
+* Genomic Health
+
+## Alterations expected to be detected in Liquid Biopsy
+* Somatic mutations LOH events
+* Somatic copy number alterations (CNAs) in tumor-normal exome data
+* Epigenetic modifications 
+
+## Examples of famous Variant calling pipelines to detect somatic and germline mutations
+* MuTect2
+* SomaticSnipper
+* VarScan2
+* MuSE
+* LoFreq
+* GDC DNA-seq 
+
+
+# Sequence Coverage Analysis
+[Illumina Sequence Coverage Calculator](https://support.illumina.com/downloads/sequencing_coverage_calculator.html)
+
+Sequencing coverage describes the average number of reads that align to, or "cover," known reference bases. The next-generation sequencing (NGS) coverage level often determines whether variant discovery can be made with a certain degree of confidence at particular base positions.
+Higher number of base coverage indicate that each base is covered by a greater number of aligned sequence reads, so base calls can be made with a higher degree of confidence.
+
+Liquid biopsies require a much higher level of coverage than solid biopsies
+We need orders of magnitude higher than standard 900-1100X coverage
+
+We need:-
+To calculate coverage needed to accurately detect somatic mutations
+
+
+
+
+# Applied Human Computational Genomics Pipeline
 Variant calling pipeline for genomic data analysis
 
 ## Requirements
@@ -44,3 +84,20 @@ GATK version 3.4
 
 ## Virtual Box Setup
 [Click here for instructions to setup](https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html)
+
+# Command to run pipeline
+
+python ahcg_pipeline.py -i /path/to/FASTQ1 /path/to/FASTQ2 -o /path/to/output -p /path/to/picard.jar
+-g /path/to/GenomeAnalysisTK.jar -b /path/to/bowtie2 -w /path/to/genome.bt2 -r /path/to/genome.fa
+-d /path/to/genome.vcf -t /path/to/trimmomatic-0.36.jar -a /path/to/adapters.fa -o /path/to/output
+
+# Extract regions of interest from BAM file
+samtools view input.bam "Chr10:18000-45500" > output.bam
+
+# Determine sequencing coverage of genome
+bedtools genomecov -d -ibam input.bam -g genome.bed > output.bed
+
+# Obtain exon coordinates using UCSC genome browser
+[Click here for the steps to Download the exon coordinates]
+
+# Filter variants by quality, depth of coverage, & type of mutation
