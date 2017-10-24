@@ -117,3 +117,13 @@ bedtools genomecov -d -ibam input.bam -g genome.bed > output.bed
 
 ## Filter variants by quality, depth of coverage, & type of mutation
 [Filtering out variants to find "interesting / relevant variants" ](http://snpeff.sourceforge.net/SnpSift.html)
+
+We choose the specific parameters here assuming-
+* liquid biopsy samples
+* we have exome sequencing data
+* coverage is 200x to 250x 
+
+```
+cat Variants.vcf | java -jar path/to/SnpSift.jar filter "((QUAL >= 30) && (DP >= 25))" > Variants-Filtered.vcf
+```
+
