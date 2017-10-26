@@ -127,3 +127,7 @@ We choose the specific parameters here assuming-
 cat Variants.vcf | java -jar path/to/SnpSift.jar filter "((QUAL >= 30) && (DP >= 25))" > Variants-Filtered.vcf
 ```
 
+# Filtering CNVs 
+Variants that are not naturally present since birth has to be distinguished from somatic variants. We need to incoorporate assessment of copy number variations and evaluation of contamination by normal cells in our pipelines.
+
+[Control-FREEC (Control-FREE Copy number and allelic content caller)](http://boevalab.com/FREEC/tutorial.html) — a tool that annotates genotypes and discovers CNAs and LOH. 
