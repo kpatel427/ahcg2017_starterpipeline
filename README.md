@@ -131,3 +131,13 @@ cat Variants.vcf | java -jar path/to/SnpSift.jar filter "((QUAL >= 30) && (DP >=
 Variants that are not naturally present since birth has to be distinguished from somatic variants. We need to incoorporate assessment of copy number variations and evaluation of contamination by normal cells in our pipelines.
 
 [Control-FREEC (Control-FREE Copy number and allelic content caller)](http://boevalab.com/FREEC/tutorial.html) — a tool that annotates genotypes and discovers CNAs and LOH. 
+
+Running first on test Data
+1. Control sample
+```
+/path/to/freec/freec -conf config_ctrl.txt
+```
+2. Test Data (50Kb window)
+```
+/PATH_TO_FREEC/freec -conf config_BL.txt
+```
