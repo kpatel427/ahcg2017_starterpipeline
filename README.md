@@ -2,21 +2,21 @@
 Author: Khushbu Patel
 About: Second year Bioinformatics Master's student at Georgia Institute of Technology
 
-# Background - Liquid Biopsy
+## Background - Liquid Biopsy
 ## What is Liquid Biopsy?
 Liquid Biopsies are non invasive tests performed to look for circulating cell free DNA from tumor cells in blood. A liquid biopsy has a potential to detect cancer at an early stage. 
 
-## Liquid Biopsy Companies
+### Liquid Biopsy Companies
 * GRAIL
 * Qiagen
 * Biocept
 
-## Alterations expected to be detected in Liquid Biopsy
+### Alterations expected to be detected in Liquid Biopsy
 * Somatic mutations-LOH events
 * Somatic copy number alterations (CNAs) in tumor-normal exome data
 * Epigenetic modifications 
 
-## Examples of famous Variant calling pipelines to detect somatic and germline mutations
+### Examples of famous Variant calling pipelines to detect somatic and germline mutations
 * MuTect2
 * SomaticSnipper
 * VarScan2
@@ -25,7 +25,7 @@ Liquid Biopsies are non invasive tests performed to look for circulating cell fr
 * GDC DNA-seq 
 
 
-## Sequence Coverage Analysis
+### Sequence Coverage Analysis
 [Illumina Sequence Coverage Calculator](https://support.illumina.com/downloads/sequencing_coverage_calculator.html)
 
 Sequencing coverage describes the average number of reads that align to, or "cover," known reference bases. The next-generation sequencing (NGS) coverage level often determines whether variant discovery can be made with a certain degree of confidence at particular base positions.
@@ -55,7 +55,7 @@ Aim: To detect somatic mutations in the pool of circulating cell free DNA by var
 
 #Note: Java v.1.8 is required to run Picard
 
-## Reference genome
+### Reference genome
 
 Reference genomes can be downloaded from [Illumina iGenomes](http://support.illumina.com/sequencing/sequencing_software/igenome.html)
 
