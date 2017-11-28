@@ -25,7 +25,7 @@ Liquid Biopsies are non invasive tests performed to look for circulating cell fr
 * GDC DNA-seq 
 
 
-# Sequence Coverage Analysis
+## Sequence Coverage Analysis
 [Illumina Sequence Coverage Calculator](https://support.illumina.com/downloads/sequencing_coverage_calculator.html)
 
 Sequencing coverage describes the average number of reads that align to, or "cover," known reference bases. The next-generation sequencing (NGS) coverage level often determines whether variant discovery can be made with a certain degree of confidence at particular base positions.
@@ -102,20 +102,20 @@ python ahcg_pipeline.py -i /path/to/FASTQ1 /path/to/FASTQ2 -o /path/to/output -p
 -d /path/to/genome.vcf -t /path/to/trimmomatic-0.36.jar -a /path/to/adapters.fa -o /path/to/output
 ```
 
-## Extract regions of interest from BAM file
+### Extract regions of interest from BAM file
 ```
 samtools view input.bam "Chr10:18000-45500" > output.bam
 ```
 
-## Determine per base sequence coverage of genome
+### Determine per base sequence coverage of genome
 ```
 samtools depth -r CHR1:1000-2000 input.bam > output.bed
 ```
 
-## Obtain exon coordinates using UCSC genome browser
+### Obtain exon coordinates using UCSC genome browser
 [Click here for the steps to Download the exon coordinates](https://github.com/kpatel427/ahcg2017_starterpipeline/blob/master/UCSC.pdf)
 
-## Filter variants by quality, depth of coverage & type of mutation
+### Filter variants by quality, depth of coverage & type of mutation
 [Filtering out variants to find "interesting / relevant variants" ](http://snpeff.sourceforge.net/SnpSift.html)
 
 We choose the specific parameters here assuming-
@@ -128,7 +128,7 @@ java -jar GenomeAnalysisTK.jar -R FASTA -T SelectVariants -V input.vcf -o output
 
 ```
 
-## Filtering CNVs 
+### Filtering CNVs 
 Variants that are not naturally present since birth has to be distinguished from somatic variants. We need to incoorporate assessment of copy number variations and evaluation of contamination by normal cells in our pipelines.
 
 [Control-FREEC (Control-FREE Copy number and allelic content caller)](http://boevalab.com/FREEC/tutorial.html) — a tool that annotates genotypes and discovers CNAs and LOH. 
