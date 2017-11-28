@@ -135,6 +135,9 @@ Variants that are not naturally present since birth has to be distinguished from
 [Control-FREEC (Control-FREE Copy number and allelic content caller)](http://boevalab.com/FREEC/tutorial.html) — a tool that annotates genotypes and discovers CNAs and LOH. 
 
 Running first on test Data [(De Mattos-Arruda et al., 2015)](https://github.com/kpatel427/ahcg2017_starterpipeline/blob/master/Paper.pdf)
+
+Design: Exome capture was performed using the Nextera Rapid Capture Exome kit; Illumina Hiseq 2000; WXS
+
 1. Control sample - SRR2530741 (Germline)
 ```
 /path/to/freec/freec -conf config_ctrl.txt
