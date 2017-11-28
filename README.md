@@ -124,7 +124,8 @@ We choose the specific parameters here assuming-
 * coverage is 200x to 250x 
 
 ```
-cat Variants.vcf | java -jar path/to/SnpSift.jar filter "((QUAL >= 30) && (DP >= 25))" > Variants-Filtered.vcf
+java -jar GenomeAnalysisTK.jar -R FASTA -T SelectVariants -V input.vcf -o output.vcf -select "QUAL >= 30 && DP >= 25"
+
 ```
 
 ## Filtering CNVs 
