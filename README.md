@@ -147,4 +147,5 @@ Design: Exome capture was performed using the Nextera Rapid Capture Exome kit; I
 /PATH_TO_FREEC/freec -conf config_BL.txt
 ```
 
-
+### Final pipeline version 
+1.0.8
