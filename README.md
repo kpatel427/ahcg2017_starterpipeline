@@ -147,5 +147,11 @@ Design: Exome capture was performed using the Nextera Rapid Capture Exome kit; I
 /PATH_TO_FREEC/freec -conf config_BL.txt
 ```
 
-### Final pipeline version 
-1.0.8
+### Features of Pipeline
+Final version 1.0.8
+
+* Filters variants by parameters QUAL>=30 and DP>=25
+* Calculates measures of descriptive statistics for certain genes
+* Retreves SRA samples automatically
+* Detects copy number variants (CNVs) 
+* Plots results for CNVs
