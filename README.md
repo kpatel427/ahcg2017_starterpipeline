@@ -45,7 +45,7 @@ Variant calling pipeline for genomic data analysis
 Aim: To detect somatic mutations in the pool of circulating cell free DNA by variant calling.
 
 ### Features of Pipeline
-Final version [1.0.8]()
+[Final version](https://github.com/kpatel427/ahcg2017_starterpipeline/blob/master/ahcg_pipeline.v1.0.7.py)
 
 * Filters variants by parameters QUAL>=30 and DP>=25
 * Calculates measures of descriptive statistics for certain genes
