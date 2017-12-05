@@ -97,11 +97,9 @@ GATK version 3.4
 
 ## Command to run pipeline
 ```
-python ahcg_pipeline.py -i /path/to/FASTQ1 /path/to/FASTQ2 -o /path/to/output -p /path/to/picard.jar \
--g /path/to/GenomeAnalysisTK.jar -b /path/to/bowtie2 -w /path/to/genome.bt2 -r /path/to/genome.fa \
--d /path/to/genome.vcf -t /path/to/trimmomatic-0.36.jar -a /path/to/adapters.fa -o /path/to/output \
--s /path/to/guardant360.refGene_hg38.genes.bed
+ahcg_pipeline_v1.0.1.py -c config_file.txt
 ```
+The latest version of pipeline can be found [here]()
 
 ### Extract regions of interest from BAM file
 ```
