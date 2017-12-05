@@ -86,7 +86,6 @@ To access help use the following command:
 python3 ahcg_pipeline.py -h
 ```
 
-
 ## Virtual Box Setup
 [Click here for instructions to setup](https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html)
 
