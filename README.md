@@ -94,20 +94,20 @@ python3 ahcg_pipeline.py -h
 ahcg_pipeline_v1.0.1.py -c config_file.txt
 ```
 
-### Extract regions of interest from BAM file
+## Extract regions of interest from BAM file
 ```
 samtools view input.bam "Chr10:18000-45500" > output.bam
 ```
 
-### Determine per base sequence coverage of genome
+## Determine per base sequence coverage of genome
 ```
 samtools depth -r CHR1:1000-2000 input.bam > output.bed
 ```
 
-### Obtain exon coordinates using UCSC genome browser
+## Obtain exon coordinates using UCSC genome browser
 [Click here for the steps to Download the exon coordinates](https://github.com/kpatel427/ahcg2017_starterpipeline/blob/master/UCSC.pdf)
 
-### Filter variants by quality, depth of coverage & type of mutation
+## Filter variants by quality, depth of coverage & type of mutation
 [Filtering out variants to find "interesting / relevant variants" ](http://snpeff.sourceforge.net/SnpSift.html)
 
 We choose the specific parameters here assuming-
@@ -120,7 +120,7 @@ java -jar GenomeAnalysisTK.jar -R FASTA -T SelectVariants -V input.vcf -o output
 
 ```
 
-### Filtering CNVs 
+## Filtering CNVs 
 Variants that are not naturally present since birth has to be distinguished from somatic variants. We need to incoorporate assessment of copy number variations and evaluation of contamination by normal cells in our pipelines.
 
 [Control-FREEC (Control-FREE Copy number and allelic content caller)](http://boevalab.com/FREEC/tutorial.html) — a tool that annotates genotypes and discovers CNAs and LOH. 
