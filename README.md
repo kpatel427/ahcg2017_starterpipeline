@@ -39,11 +39,19 @@ To calculate coverage needed to accurately detect somatic mutations
 
 
 
-
 # Applied Human Computational Genomics Pipeline
 Variant calling pipeline for genomic data analysis
 
 Aim: To detect somatic mutations in the pool of circulating cell free DNA by variant calling.
+
+### Features of Pipeline
+Final version [1.0.8]()
+
+* Filters variants by parameters QUAL>=30 and DP>=25
+* Calculates measures of descriptive statistics for certain genes
+* Retreves SRA samples automatically
+* Detects copy number variants (CNVs) 
+* Plots results for CNVs
 
 ## Requirements
 
@@ -52,36 +60,25 @@ Aim: To detect somatic mutations in the pool of circulating cell free DNA by var
 3. [Bowtie2 - version 2.2.9](https://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.2.9/)
 4. [Picard tools - version 2.6.0](https://github.com/broadinstitute/picard/releases/download/2.6.0/picard.jar)
 5. [GATK - version 3.4](https://software.broadinstitute.org/gatk/download/)
+6. [Control-FREEC - version 11.0](http://boevalab.com/FREEC/index.html#downloads)
 
 #Note: Java v.1.8 is required to run Picard
 
 ### Reference genome
 
 Reference genomes can be downloaded from [Illumina iGenomes](http://support.illumina.com/sequencing/sequencing_software/igenome.html)
+Fasta index file and Fasta dictionary file is required; steps to create them are described below.
 
-#### Create FASTA index file
+##### Create FASTA index file
 ```
 samtools faidx reference.fa
 ```
-#### Create FASTA dictionary file
+##### Create FASTA dictionary file
 ```
 java -jar picard.jar CreateSequenceDictionary R=reference O=dictionary
 ```
 
-## Test data
-
-Use the following protocol to download and prepare test dataset from NIST sample NA12878
-
-```{sh}
-wget ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L001_R1_001.fastq.gz
-wget ftp://ftp-trace.ncbi.nih.gov/giab/ftp/data/NA12878/Garvan_NA12878_HG001_HiSeq_Exome/NIST7035_TAAGGCGA_L001_R2_001.fastq.gz
-gunzip NIST7035_TAAGGCGA_L001_R1_001.fastq.gz
-gunzip NIST7035_TAAGGCGA_L001_R2_001.fastq.gz
-head -100000 NIST7035_TAAGGCGA_L001_R1_001.fastq > test_r1.fastq
-head -100000 NIST7035_TAAGGCGA_L001_R2_001.fastq > test_r2.fastq
-```
-
-## Help
+### Help
 
 To access help use the following command:
 
@@ -89,8 +86,6 @@ To access help use the following command:
 python3 ahcg_pipeline.py -h
 ```
 
-## Installation
-GATK version 3.4
 
 ## Virtual Box Setup
 [Click here for instructions to setup](https://www.perkin.org.uk/posts/create-virtualbox-vm-from-the-command-line.html)
@@ -99,7 +94,6 @@ GATK version 3.4
 ```
 ahcg_pipeline_v1.0.1.py -c config_file.txt
 ```
-The latest version of pipeline can be found [here]()
 
 ### Extract regions of interest from BAM file
 ```
@@ -145,11 +139,4 @@ Design: Exome capture was performed using the Nextera Rapid Capture Exome kit; I
 /PATH_TO_FREEC/freec -conf config_BL.txt
 ```
 
-### Features of Pipeline
-Final version 1.0.8
 
-* Filters variants by parameters QUAL>=30 and DP>=25
-* Calculates measures of descriptive statistics for certain genes
-* Retreves SRA samples automatically
-* Detects copy number variants (CNVs) 
-* Plots results for CNVs
